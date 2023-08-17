@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size:min(16px,3vw);
+}
+
+img{
+    display:block;
+    width:50%;
+}
+
 body {
     border: 10px solid #1d1e4c;
     font-size: 18px;
@@ -12,8 +21,10 @@ body {
 }
 
 .container {
+    display:block;
+    width:90%;
+    max-width: 900px;
     margin: 80px auto;
-    width: 900px;
     text-align: justify;
 }
 
@@ -24,20 +35,20 @@ body {
 
 figure {
     display: flex;
+    
     justify-content: space-between;
 }
 
 figure img {
-    width: 250px;
     display: block;
     height: auto;
     border-radius: 50%;
 }
 
 figcaption {
+    padding-inline:1em;
     align-self: flex-end;
     font-size: 2.5rem;
-    word-spacing: 0.5rem;
     color: hsl(240, 67%, 20%);
     font-weight: bolder;
     text-transform: uppercase;
@@ -76,11 +87,41 @@ figcaption {
 .biography-list {
     padding: 0px 50px;
     line-height: 1.75;
-    white-space: nowrap;
     margin-bottom: 3.5rem;
 }
 
 footer {
+    font-size: 1rem;
     text-align: right;
     font-weight: 500;
+}
+
+
+@media screen and (max-width:850px){
+    figure{
+        flex-direction: column;
+        gap:3em;
+        align-items: center;
+    }
+
+    *{
+        line-height:normal  !important ;
+        letter-spacing: normal !important ;
+        word-spacing: normal !important ;
+    }
+
+    li{
+        margin-bottom:1em;
+    }
+}
+
+@media screen and (max-width:450px){
+    .biography-list{
+        padding:0.25em 0.5em;
+        font-size:1rem;
+    }
+
+    .secondary-heading{
+        font-size:clamp(2rem,1.75rem,1.5rem);
+    }
 }
